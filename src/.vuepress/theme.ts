@@ -1,116 +1,152 @@
-import { hopeTheme } from "vuepress-theme-hope";
-import navbar from "./navbar.js";
-import sidebar from "./sidebar.js";
-import { MR_HOPE_AVATAR } from "./logo.js";
-
-export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
-
+import { MyTheme } from "./theme/index";
+import { zhNavbar } from "./navbar/index.js";
+// import { zhSidebar } from "./sidebar/index.js";
+export default MyTheme({
+  hotReload: true,
+  hostname: "https://oragekk.me",
+  themeColor: true,
+  fullscreen: true,
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "Oragekk",
+    url: "https://orgaekk.me",
   },
 
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: [
+    // 默认：
+    "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
+    // 自己的
+    "//at.alicdn.com/t/c/font_3941380_40oya9bsklp.css",
+  ],
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "OrageKK/oragekk.github.io",
 
   docsDir: "src",
 
-  // 导航栏
-  navbar,
-
-  // 侧边栏
-  sidebar,
-
-  // 页脚
-  footer: "默认页脚",
-  displayFooter: true,
-
-  // 博客相关
-  blog: {
-    description: "一个前端开发者",
-    intro: "/intro.html",
-    medias: {
-      Baidu: "https://example.com",
-      BiliBili: "https://example.com",
-      Bitbucket: "https://example.com",
-      Dingding: "https://example.com",
-      Discord: "https://example.com",
-      Dribbble: "https://example.com",
-      Email: "mailto:info@example.com",
-      Evernote: "https://example.com",
-      Facebook: "https://example.com",
-      Flipboard: "https://example.com",
-      Gitee: "https://example.com",
-      GitHub: "https://example.com",
-      Gitlab: "https://example.com",
-      Gmail: "mailto:info@example.com",
-      Instagram: "https://example.com",
-      Lark: "https://example.com",
-      Lines: "https://example.com",
-      Linkedin: "https://example.com",
-      Pinterest: "https://example.com",
-      Pocket: "https://example.com",
-      QQ: "https://example.com",
-      Qzone: "https://example.com",
-      Reddit: "https://example.com",
-      Rss: "https://example.com",
-      Steam: "https://example.com",
-      Twitter: "https://example.com",
-      Wechat: "https://example.com",
-      Weibo: "https://example.com",
-      Whatsapp: "https://example.com",
-      Youtube: "https://example.com",
-      Zhihu: "https://example.com",
-      MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
-    },
+  navbarLayout: {
+    start: ["Brand"],
+    center: ["Links"],
+    end: ["Language", "Repo", "Wormhole", "Travelling", "Outlook", "Search"],
   },
 
-  // 加密配置
+  blog: {
+    name: "上冬十二",
+  },
+  locales: {
+    /**
+     * Chinese locale config
+     */
+    "/": {
+      footer: "默认页脚",
+      navbar: zhNavbar,
+      displayFooter: false,
+
+      blog: {
+        description: "到最后，竟庆幸于夕阳仍留在身上",
+        intro: "/intro.html",
+      },
+
+      // page meta
+      metaLocales: {
+        editLink: "在 GitHub 上编辑此页",
+      },
+    },
+  },
+  // navbarAutoHide: "always",
+  // 加密
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
     },
   },
-
-  // 多语言配置
-  metaLocales: {
-    editLink: "在 GitHub 上编辑此页",
-  },
-
-  // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
-  // hotReload: true,
-
-  // 在这里配置主题提供的插件
   plugins: {
-    blog: true,
-
-    // 在启用之前需要安装 @waline/client
-    // 警告: 这是一个仅供演示的测试服务器，在生产环境中请自行部署并使用自己的服务器！
-    // comment: {
-    //   provider: "Waline",
-    //   serverURL: "https://waline-comment.vuejs.press",
-    // },
-
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["BiliBili", "Badge"],
     },
+    blog: {
+      filter: ({ filePathRelative, frontmatter }) => {
+        // 将标记为非文章，并且是说说的加入文章采集中，以便后续筛选
+        if (!frontmatter.article && frontmatter.news) return true;
 
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
+        return true;
+      },
+
+      type: [
+        {
+          key: "news",
+          filter: (page) => page.frontmatter.news === true,
+          path: "/news/",
+          layout: "News",
+          frontmatter: () => ({ title: "说说" }),
+        },
+      ],
+    },
+    photoSwipe: {
+      selector: [
+        ".theme-hope-content :not(a) > img:not([no-view])",
+        ".news-content :not(a) > .vp-article-excerpt img",
+      ],
+    },
+    git: true,
+    feed: {
+      rss: true,
+    },
+    comment: {
+      provider: "Waline",
+      serverURL: "https://talk.oragekk.me/", // your server url
+      reaction: true,
+      requiredMeta: ["nick"],
+      wordLimit: 300,
+      emoji: [
+        "https://unpkg.com/@waline/emojis@1.1.0/tieba",
+        "https://unpkg.com/@waline/emojis@1.1.0/weibo",
+        "https://emoji.shojo.cn/bili/webp/tv_小电视_动图",
+        "https://emoji.shojo.cn/bili/webp/罗小黑战记",
+        "https://emoji.shojo.cn/bili/webp/2233娘",
+        "https://emoji.shojo.cn/bili/webp/装扮小姐姐梦幻冬季",
+        "https://emoji.shojo.cn/bili/webp/装扮小姐姐·秋日午后",
+        "https://emoji.shojo.cn/bili/webp/星尘",
+        "https://emoji.shojo.cn/bili/webp/池年",
+      ],
+      locales: {
+        "/": {
+          placeholder:
+            "欢迎留言~ _(≧∇≦」∠)_ (填写常用邮箱即可快速收到回复通知~)",
+        },
+      },
+    },
+    prismjs: false,
+    copyright: {
+      author: "Oragekk",
+      license: "CC BY-NC-SA 4.0",
+      global: true,
+    },
+    // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
       attrs: true,
+      chart: true,
       codetabs: true,
-      component: true,
+      container: true,
       demo: true,
+      echarts: true,
       figure: true,
+      flowchart: true,
+      gfm: true,
+      tasklist: true,
       imgLazyload: true,
       imgSize: true,
       include: true,
+      katex: true,
       mark: true,
+      mermaid: true,
+      playground: {
+        presets: ["ts", "vue"],
+      },
+      revealJs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+      },
       stylize: [
         {
           matcher: "Recommended",
@@ -128,101 +164,64 @@ export default hopeTheme({
       sup: true,
       tabs: true,
       vPre: true,
-
-      // 在启用之前安装 chart.js
-      // chart: true,
-
-      // insert component easily
-
-      // 在启用之前安装 echarts
-      // echarts: true,
-
-      // 在启用之前安装 flowchart.ts
-      // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
-
-      // 在启用之前安装 katex
-      // katex: true,
-
-      // 在启用之前安装 mathjax-full
-      // mathjax: true,
-
-      // 在启用之前安装 mermaid
-      // mermaid: true,
-
-      // playground: {
-      //   presets: ["ts", "vue"],
-      // },
-
-      // 在启用之前安装 reveal.js
-      // revealJs: {
-      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-      // },
-
-      // 在启用之前安装 @vue/repl
-      // vuePlayground: true,
-
-      // install sandpack-vue3 before enabling it
-      // sandpack: true,
+      vuePlayground: true,
     },
 
-    // 如果你需要 PWA。安装 vuepress-plugin-pwa2 并取消下方注释
-    // pwa: {
-    //   favicon: "/favicon.ico",
-    //   cacheHTML: true,
-    //   cachePic: true,
-    //   appendBase: true,
-    //   apple: {
-    //     icon: "/assets/icon/apple-icon-152.png",
-    //     statusBarColor: "black",
-    //   },
-    //   msTile: {
-    //     image: "/assets/icon/ms-icon-144.png",
-    //     color: "#ffffff",
-    //   },
-    //   manifest: {
-    //     icons: [
-    //       {
-    //         src: "/assets/icon/chrome-mask-512.png",
-    //         sizes: "512x512",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-mask-192.png",
-    //         sizes: "192x192",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-512.png",
-    //         sizes: "512x512",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-192.png",
-    //         sizes: "192x192",
-    //         type: "image/png",
-    //       },
-    //     ],
-    //     shortcuts: [
-    //       {
-    //         name: "Demo",
-    //         short_name: "Demo",
-    //         url: "/demo/",
-    //         icons: [
-    //           {
-    //             src: "/assets/icon/guide-maskable.png",
-    //             sizes: "192x192",
-    //             purpose: "maskable",
-    //             type: "image/png",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
+    // uncomment these if you want a PWA
+    pwa: {
+      favicon: "/favicon.ico",
+      cacheHTML: true,
+      cachePic: true,
+      appendBase: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
+      manifest: {
+        icons: [
+          {
+            src: "/assets/icon/chrome-mask-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-mask-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
+        shortcuts: [
+          {
+            name: "Demo",
+            short_name: "Demo",
+            url: "/demo/",
+            icons: [
+              {
+                src: "/assets/icon/guide-maskable.png",
+                sizes: "192x192",
+                purpose: "maskable",
+                type: "image/png",
+              },
+            ],
+          },
+        ],
+      },
+    },
   },
 });
