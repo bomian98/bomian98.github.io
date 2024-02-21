@@ -101,3 +101,7 @@ const {
     </article>
   </div>
 </template>
+
+<style lang="scss">
+@import "../style/article-item.scss";
+</style>
