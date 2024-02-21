@@ -7,7 +7,7 @@ export default MyTheme({
   themeColor: true,
   fullscreen: true,
   author: {
-    name: "Oragekk",
+    name: "不眠",
     url: "https://orgaekk.me",
   },
 
@@ -31,7 +31,7 @@ export default MyTheme({
   },
 
   blog: {
-    name: "上冬十二",
+    name: "不眠",
   },
   locales: {
     /**
@@ -43,7 +43,7 @@ export default MyTheme({
       displayFooter: false,
 
       blog: {
-        description: "到最后，竟庆幸于夕阳仍留在身上",
+        description: "",
         intro: "/intro.html",
       },
 
@@ -118,7 +118,7 @@ export default MyTheme({
     },
     prismjs: false,
     copyright: {
-      author: "Oragekk",
+      author: "不眠",
       license: "CC BY-NC-SA 4.0",
       global: true,
     },
