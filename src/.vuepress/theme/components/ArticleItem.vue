@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { toRef } from "vue";
+import { computed, toRef } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
-import { ArticleInfoType, PageType } from "vuepress-theme-hope/client/index";
+import { ArticleInfoType, ArticleInfo } from "vuepress-theme-hope/client/index";
 import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
 import { StickyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index";
+
+import DateInfo from "@theme-hope/modules/info/components/DateInfo";
+import TagInfo from "@theme-hope/modules/info/components/TagInfo";
+import WordInfo from "@theme-hope/modules/info/components/WordInfo";
 
 const props = defineProps({
   info: {
@@ -33,6 +37,11 @@ const {
   [ArticleInfoType.excerpt]: excerpt,
   [ArticleInfoType.sticky]: sticky,
 } = articleInfo.value;
+
+const pageInfo2 = computed(() => {  
+    const { author:author, tag:tag,category:category} = pageInfo.value;  
+    return { author, tag,category };  
+}); 
 </script>
 
 <template>
@@ -95,7 +104,7 @@ const {
           <slot name="info" :info="pageInfo"></slot>
         </template>
         <template v-else>
-          <PageInfo :info="pageInfo" :items="items" />
+          <PageInfo :info="pageInfo2" :items="items" />
         </template>
       </div>
     </article>
