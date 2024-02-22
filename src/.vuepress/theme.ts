@@ -9,7 +9,7 @@ export default MyTheme({
     name: "不眠",
     url: "https://orgaekk.me",
   },
-  
+
   // 图标资源 https://theme-hope.vuejs.press/zh/guide/interface/icon.html#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE
   iconAssets: [
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
@@ -18,10 +18,15 @@ export default MyTheme({
 
   // sidebar setting
   sidebar: false,
+  // 页面关闭文件路径显示
+  breadcrumb: false,
   // footer setting
   footer: "默认页脚",
   displayFooter: true,
 
+  // PageMeta
+  contributors: false,
+  editLink: false,
 
   logo: "/logo.svg",
 
@@ -52,7 +57,7 @@ export default MyTheme({
       metaLocales: {
         editLink: "在 GitHub 上编辑此页",
       },
-    },]
+    },
   },
   // navbarAutoHide: "always",
   // 加密
@@ -88,7 +93,7 @@ export default MyTheme({
         ".news-content :not(a) > .vp-article-excerpt img",
       ],
     },
-    
+
     git: true,
 
     feed: {
@@ -121,14 +126,14 @@ export default MyTheme({
     },
 
     // @vuepress/plugin-prismjs 代码主题
-    prismjs: false,
+    // prismjs: false,
 
     /*
       代码复制 @vuepress/plugin-copy-code
       https://theme-hope.vuejs.press/zh/guide/feature/copy-code.html
-    */ 
+    */
     copyCode: {
-      showInMobile: true
+      showInMobile: true,
     },
 
     copyright: {
