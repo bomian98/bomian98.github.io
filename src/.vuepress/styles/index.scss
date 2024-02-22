@@ -2,6 +2,20 @@
 @use "navbar";
 @use "blog_info";
 
-div{
+div {
     display: block;
+}
+
+// TODO 不太合适，不适合含 cover 或者无 navbar 的页面
+.theme-container .vp-page{
+    padding: top 0;
+}
+.vp-page-title h1{
+    padding-top: 0 !important;
+}
+@media (min-width: 1440px) {
+    .theme-container.no-sidebar .vp-page,
+    .theme-container.no-sidebar.has-toc .vp-page {
+        padding-inline: 0;
+    }
 }
