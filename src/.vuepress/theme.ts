@@ -38,8 +38,8 @@ export default MyTheme({
   */
   navbarLayout: {
     start: ["Brand"],
-    center: ["Links"],
-    end: ["Outlook", "Search"],
+    center: [],
+    end: ["Links", "Outlook", "Search"],
   },
 
   blog: {

@@ -1,4 +1,17 @@
 .vp-navbar {
     position: static;
     box-shadow: none;
+
+    .vp-nav-links{
+        font-size: 18px;
+    }
+}
+.vp-navbar .nav-item > .nav-link.active{
+    color: var(--dark-grey);
+}
+.vp-navbar .nav-item > .nav-link:hover{
+    color: var(--theme-color);
+}
+.vp-navbar .nav-item > .nav-link::after{
+    display: none;
 }

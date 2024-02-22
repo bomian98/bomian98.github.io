@@ -1,8 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
-title: 首页
+title: Blog
 # heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: 你博客的名称
 heroFullScreen: true

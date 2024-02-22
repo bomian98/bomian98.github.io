@@ -3,11 +3,11 @@ import { navbar } from "vuepress-theme-hope";
 export const zhNavbar = navbar([
   "/",
   {
-    text: "生活所思",
+    text: "Thinking",
     link: "/thinking/",
   },
   {
-    text: "生活记录",
+    text: "Record",
     link: "/life-record/",
   },
   {
@@ -15,17 +15,12 @@ export const zhNavbar = navbar([
     link: "/topic",
   },
   {
-    text: "友链",
-    icon: "link",
+    text: "Friend",
     link: "/friend",
   },
   {
-    text: "关于",
-    icon: "info",
-    children: [
-      { text: "关于我", icon: "people", link: "/intro" },
-      { text: "关于本站", icon: "info", link: "/about" },
-    ],
+    text: "Info",
+    link: "/intro",
   },
   //   {
   //     text: "笔记分类",
