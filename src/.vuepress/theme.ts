@@ -15,7 +15,8 @@ export default MyTheme({
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     "//at.alicdn.com/t/c/font_3941380_40oya9bsklp.css",
   ],
-
+  // 目录侧会出现打印按钮
+  print: false,
   // sidebar setting
   sidebar: false,
   // 页面关闭文件路径显示
