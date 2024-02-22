@@ -3,55 +3,56 @@ import { zhNavbar } from "./navbar/index.js";
 // import { zhSidebar } from "./sidebar/index.js";
 export default MyTheme({
   hotReload: true,
+
   hostname: "https://oragekk.me",
-  themeColor: true,
-  fullscreen: true,
   author: {
     name: "不眠",
     url: "https://orgaekk.me",
   },
-
+  
+  // 图标资源 https://theme-hope.vuejs.press/zh/guide/interface/icon.html#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE
   iconAssets: [
-    // 默认：
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
-    // 自己的
     "//at.alicdn.com/t/c/font_3941380_40oya9bsklp.css",
   ],
 
-  logo: "/logo.svg",
+  // sidebar setting
+  sidebar: false,
+  // footer setting
+  footer: "默认页脚",
+  displayFooter: true,
 
-  repo: "OrageKK/oragekk.github.io",
+
+  logo: "/logo.svg",
 
   docsDir: "src",
 
+  /*
+    导航栏布局选项：
+    https://vuepress-theme-hope.github.io/v2/zh/config/theme/layout.html
+  */
   navbarLayout: {
     start: ["Brand"],
     center: ["Links"],
-    end: ["Language", "Repo", "Wormhole", "Travelling", "Outlook", "Search"],
+    end: ["Outlook", "Search"],
   },
 
   blog: {
     name: "不眠",
   },
   locales: {
-    /**
-     * Chinese locale config
-     */
     "/": {
-      footer: "默认页脚",
       navbar: zhNavbar,
-      displayFooter: false,
 
       blog: {
         description: "",
         intro: "/intro.html",
       },
-
       // page meta
       metaLocales: {
         editLink: "在 GitHub 上编辑此页",
       },
-    },
+    },]
   },
   // navbarAutoHide: "always",
   // 加密
@@ -68,10 +69,8 @@ export default MyTheme({
       filter: ({ filePathRelative, frontmatter }) => {
         // 将标记为非文章，并且是说说的加入文章采集中，以便后续筛选
         if (!frontmatter.article && frontmatter.news) return true;
-
         return true;
       },
-
       type: [
         {
           key: "news",
@@ -82,16 +81,20 @@ export default MyTheme({
         },
       ],
     },
+
     photoSwipe: {
       selector: [
         ".theme-hope-content :not(a) > img:not([no-view])",
         ".news-content :not(a) > .vp-article-excerpt img",
       ],
     },
+    
     git: true,
+
     feed: {
       rss: true,
     },
+
     comment: {
       provider: "Waline",
       serverURL: "https://talk.oragekk.me/", // your server url
@@ -116,7 +119,18 @@ export default MyTheme({
         },
       },
     },
+
+    // @vuepress/plugin-prismjs 代码主题
     prismjs: false,
+
+    /*
+      代码复制 @vuepress/plugin-copy-code
+      https://theme-hope.vuejs.press/zh/guide/feature/copy-code.html
+    */ 
+    copyCode: {
+      showInMobile: true
+    },
+
     copyright: {
       author: "不眠",
       license: "CC BY-NC-SA 4.0",
@@ -128,7 +142,6 @@ export default MyTheme({
       attrs: true,
       chart: true,
       codetabs: true,
-      container: true,
       demo: true,
       echarts: true,
       figure: true,
