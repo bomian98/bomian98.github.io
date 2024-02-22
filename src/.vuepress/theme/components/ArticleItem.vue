@@ -7,10 +7,6 @@ import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
 import { StickyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index";
 
-import DateInfo from "@theme-hope/modules/info/components/DateInfo";
-import TagInfo from "@theme-hope/modules/info/components/TagInfo";
-import WordInfo from "@theme-hope/modules/info/components/WordInfo";
-
 const props = defineProps({
   info: {
     type: Object,
@@ -38,10 +34,10 @@ const {
   [ArticleInfoType.sticky]: sticky,
 } = articleInfo.value;
 
-const pageInfo2 = computed(() => {  
-    const { author:author, tag:tag,category:category} = pageInfo.value;  
-    return { author, tag,category };  
-}); 
+const pageInfo2 = computed(() => {
+  const { author: author, tag: tag, category: category } = pageInfo.value;
+  return { author, tag, category };
+});
 </script>
 
 <template>
