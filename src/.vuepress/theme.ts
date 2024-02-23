@@ -69,7 +69,7 @@ export default MyTheme({
       "/demo/encrypt.html": ["1234"],
     },
   },
-  
+
   plugins: {
     components: {
       components: ["BiliBili", "Badge"],
