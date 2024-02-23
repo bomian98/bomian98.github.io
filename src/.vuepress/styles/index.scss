@@ -1,40 +1,38 @@
 // place your custom styles here
-@use "custom/navbar";
-@use "custom/blog-info";
-@use "custom/toc";
-@use "custom/page-info";
-@use "custom/page-meta";
+@use "navbar/navbar";
+@use "blog/blog-info";
+@use "info/toc";
+@use "info/page-info";
+@use "info/page-meta";
 
 div {
-    display: block;
+  display: block;
 }
 
 .theme-container .vp-page {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 .vp-page-title h1 {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 @media (min-width: 1440px) {
-
-    .theme-container.no-sidebar .vp-page,
-    .theme-container.no-sidebar.has-toc .vp-page {
-        padding-inline: 0;
-    }
+  .theme-container.no-sidebar .vp-page,
+  .theme-container.no-sidebar.has-toc .vp-page {
+    padding-inline: 0;
+  }
 }
 
-
-.theme-hope-content:not(.custom)>h1,
-.theme-hope-content:not(.custom)>h2,
-.theme-hope-content:not(.custom)>h3,
-.theme-hope-content:not(.custom)>h4,
-.theme-hope-content:not(.custom)>h5,
-.theme-hope-content:not(.custom)>h6 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding-top: 1rem;
-    outline: none;
+.theme-hope-content:not(.custom) > h1,
+.theme-hope-content:not(.custom) > h2,
+.theme-hope-content:not(.custom) > h3,
+.theme-hope-content:not(.custom) > h4,
+.theme-hope-content:not(.custom) > h5,
+.theme-hope-content:not(.custom) > h6 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 1rem;
+  outline: none;
 }
