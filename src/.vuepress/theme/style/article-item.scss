@@ -1,4 +1,4 @@
-@use '@sass-palette/hope-config';
+@use "@sass-palette/hope-config";
 
 .vp-article-wrapper {
   margin-bottom: 0.75rem;
@@ -31,6 +31,7 @@
 .vp-article-item {
   display: flex;
   border-radius: 0.4rem;
+  position: relative;
 
   color: inherit;
 
@@ -45,6 +46,17 @@
     border-radius: 0;
   }
 
+  .vp-article-item-cover {
+    max-width: 145px;
+    flex: 0 0 auto;
+    width: 25%;
+    padding-right: 1.25rem;
+
+    @media (max-width: hope-config.$mobile) {
+      display: none;
+    }
+  }
+
   .sticky-icon {
     position: absolute;
     top: 0;
@@ -56,32 +68,33 @@
     color: var(--theme-color);
   }
 
-  .vp-article-item-cover{
-    max-width: 145px;
-    flex:  0 0 auto;
-    width: 25%;
-    padding-right: 1.25rem;
-  }
-
-  .vp-article-item-uncover{
-    display:flex;
+  .vp-article-item-uncover {
+    display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-  }
 
-  .page-info {
-    > span {
-      display: flex;
-      flex-shrink: 0;
-      align-items: center;
+    > :nth-last-child(2) {
+      margin-bottom: 1.25rem;
+    }
 
-      margin-inline-end: 0.5em;
+    .page-info {
+      // 找到第一个具有定位属性的父元素
+      position: absolute;
+      bottom: 0;
 
-      line-height: 1.8;
+      > span {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
 
-      &::after {
-        --balloon-font-size: 8px;
-        padding: 0.3em 0.6em !important;
+        margin-inline-end: 0.5em;
+
+        line-height: 1.8;
+
+        &::after {
+          --balloon-font-size: 8px;
+          padding: 0.3em 0.6em !important;
+        }
       }
     }
   }
@@ -105,7 +118,7 @@
   cursor: pointer;
 
   &::after {
-    content: '';
+    content: "";
 
     position: absolute;
     inset: auto 0 0;
@@ -173,7 +186,7 @@
     border-radius: 0;
   }
 
-  img{
+  img {
     position: absolute;
     top: 0;
     right: 0;
@@ -188,6 +201,7 @@
 .vp-article-excerpt {
   overflow: hidden;
   line-height: 1.6;
+  color: var(--light-grey);
   cursor: default;
 
   @media (max-width: hope-config.$pad) {
@@ -235,7 +249,7 @@
   }
 
   // code block fix
-  div[class*='language-'] {
+  div[class*="language-"] {
     overflow: auto hidden;
 
     pre {
