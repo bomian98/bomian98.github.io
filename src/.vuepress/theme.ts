@@ -28,6 +28,8 @@ export default MyTheme({
   // footer setting
   footer: "默认页脚",
   displayFooter: true,
+  // pageinfo 显示内容
+  pageInfo: ["Author", "Date", "Category", "Tag"],
 
   // PageMeta
   contributors: false,
