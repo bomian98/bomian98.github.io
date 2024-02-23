@@ -3,11 +3,15 @@
 @use "sass:list";
 @use "../palette.scss" as *;
 
+.page-category-item::before{
+  content: "×";
+}
+
 .page-category-item {
   display: inline-block;
 
   margin: 0 0;
-  padding: 0 0.25em;
+  padding: 0 0.125em;
   border-radius: 0.25em;
 
   background: var(--bg-color-secondary);
