@@ -4,11 +4,15 @@ import { zhNavbar } from "./navbar/index.js";
 export default MyTheme({
   hotReload: true,
 
+  /*
+    加上这个，ArticleItem 就会显示作者，所以不要
+    author: {
+      name: "不眠",
+      url: "https://orgaekk.me",
+    },
+  */
+
   hostname: "https://oragekk.me",
-  author: {
-    name: "不眠",
-    url: "https://orgaekk.me",
-  },
 
   // 图标资源 https://theme-hope.vuejs.press/zh/guide/interface/icon.html#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE
   iconAssets: [
