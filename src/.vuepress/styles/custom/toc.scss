@@ -1,0 +1,31 @@
+$headings: (2, 3, 4, 5, 6);
+
+#toc {
+  .toc-header {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  // 存在问题，如果真的很长，那么没有滚动条有点难受
+  .toc-wrapper {
+    overflow: hidden;
+  }
+
+  .toc-item.active > .toc-link {
+    color: var(--light-grey);
+    font-weight: 500;
+  }
+
+  .toc-item:hover > .toc-link {
+    color: var(--theme-color);
+  }
+
+  .toc-link {
+    @each $heading in $headings {
+      &.level#{$heading} {
+        padding-inline-start: calc($heading * 0.8rem - 1.6rem);
+        font-size: calc(1.2rem - 2 * 1px);
+      }
+    }
+  }
+}

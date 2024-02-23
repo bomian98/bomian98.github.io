@@ -1,6 +1,7 @@
 // place your custom styles here
-@use "navbar";
-@use "blog_info";
+@use "custom/navbar";
+@use "custom/blog-info";
+@use "custom/toc";
 
 div {
     display: block;
