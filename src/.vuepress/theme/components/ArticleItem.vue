@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, toRef } from "vue";
+import { computed, onMounted, toRef } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
 import { ArticleInfoType, ArticleInfo } from "vuepress-theme-hope/client/index";
 import PageInfo from "@theme-hope/modules/info/components/PageInfo";
@@ -35,9 +35,20 @@ const {
 } = articleInfo.value;
 
 const pageInfo2 = computed(() => {
-  const { author: author, tag: tag, category: category } = pageInfo.value;
-  return { author, tag, category };
+  const {
+    author: author,
+    date: date,
+    tag: tag,
+    category: category,
+  } = pageInfo.value;
+
+  return { author, date, tag, category };
 });
+
+// onMounted(() => {
+//   console.log(pageInfo2);
+//   console.log(items);
+// });
 </script>
 
 <template>
