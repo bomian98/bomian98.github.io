@@ -7,6 +7,8 @@ tag:
   - 页面
 ---
 
+<!-- more -->
+
 ## 图标支持
 
 你可以在页面的 frontmatter 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。

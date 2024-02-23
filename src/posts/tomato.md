@@ -10,6 +10,8 @@ star: true
 sticky: true
 ---
 
+<!-- more -->
+
 # 番茄
 
 ## 标题 2
