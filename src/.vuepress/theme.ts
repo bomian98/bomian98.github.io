@@ -54,7 +54,7 @@ export default MyTheme({
   blog: {
     name: "不眠",
     description: "",
-    intro: "/intro.html",
+    intro: "/info/info.html",
   },
 
   metaLocales: {

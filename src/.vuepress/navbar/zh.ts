@@ -16,11 +16,11 @@ export const zhNavbar = navbar([
   },
   {
     text: "Friend",
-    link: "/friend",
+    link: "/info/friend",
   },
   {
     text: "Info",
-    link: "/intro",
+    link: "/info/info",
   },
   //   {
   //     text: "笔记分类",
