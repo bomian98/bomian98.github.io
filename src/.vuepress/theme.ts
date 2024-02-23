@@ -37,36 +37,39 @@ export default MyTheme({
     导航栏布局选项：
     https://vuepress-theme-hope.github.io/v2/zh/config/theme/layout.html
   */
+  navbar: zhNavbar,
   navbarLayout: {
     start: ["Brand"],
     center: [],
     end: ["Links", "Outlook", "Search"],
   },
+  // navbarAutoHide: "always",
 
   blog: {
     name: "不眠",
+    description: "",
+    intro: "/intro.html",
   },
-  locales: {
-    "/": {
-      navbar: zhNavbar,
 
-      blog: {
-        description: "",
-        intro: "/intro.html",
-      },
-      // page meta
-      metaLocales: {
-        editLink: "在 GitHub 上编辑此页",
-      },
-    },
+  metaLocales: {
+    toc: "CONTENTS",
   },
-  // navbarAutoHide: "always",
+
+  /**
+   * 配置多语言下的主题信息
+   * https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/zh/config/theme/i18n.md
+   */
+  locales: {
+    "/": {},
+  },
+
   // 加密
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
     },
   },
+  
   plugins: {
     components: {
       components: ["BiliBili", "Badge"],
