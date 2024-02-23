@@ -7,6 +7,10 @@
 @use "info/category-info";
 @use "info/tag-info";
 
+.vp-page {
+  background-color: var(--bg-color-float) !important;
+}
+
 div {
   display: block;
 }
