@@ -1,0 +1,9 @@
+.page-meta {
+  .meta-item {
+    .label {
+      &:not(a) {
+        color: var(--dark-grey);
+      }
+    }
+  }
+}

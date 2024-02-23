@@ -2,6 +2,8 @@
 @use "custom/navbar";
 @use "custom/blog-info";
 @use "custom/toc";
+@use "custom/page-info";
+@use "custom/page-meta";
 
 div {
     display: block;
