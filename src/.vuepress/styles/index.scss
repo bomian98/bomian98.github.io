@@ -4,6 +4,8 @@
 @use "info/toc";
 @use "info/page-info";
 @use "info/page-meta";
+@use "info/category-info";
+@use "info/tag-info";
 
 div {
   display: block;

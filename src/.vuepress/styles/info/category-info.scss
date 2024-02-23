@@ -1,0 +1,46 @@
+@use "@sass-palette/hope-config";
+@use "sass:color";
+@use "sass:list";
+@use "../palette.scss" as *;
+
+.page-category-item {
+  display: inline-block;
+
+  margin: 0 0;
+  padding: 0 0.25em;
+  border-radius: 0.25em;
+
+  background: var(--bg-color-secondary);
+  color: var(--light-grey);
+
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 2;
+
+  transition: background var(--color-transition), color var(--color-transition);
+
+  &.clickable {
+    > span:hover {
+      color: var(--theme-color);
+      cursor: pointer;
+    }
+  }
+
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
+
+    &.category#{$index} {
+      background: none;
+      color: var(--light-grey);
+
+      #{hope-config.$dark-selector} & {
+        background: none;
+        color: var(--light-grey);
+      }
+
+      &:hover {
+        background: color.scale($theme-color, $lightness: +60%);
+      }
+    }
+  }
+}
