@@ -1,6 +1,5 @@
 ---
 title: Markdown 展示
-icon: fab fa-markdown
 order: 2
 category:
   - 使用指南
@@ -33,6 +32,15 @@ VuePress 通过 Frontmatter 为每个 Markdown 页面引入配置。
 
 > **Note**: Some text here
 > Additional Content
+
+
+````tip 重启策略
+- no 默认值，表示容器退出时，docker不自动重启容器
+- always 容器退出时总是重启
+- on-failure 若容器的退出状态非0，则docker自动重启容器
+- unless-stopped 容器退出时总是重启，但不考虑Docker守护进程启动时就已经停止的容器
+````
+
 
 ::: info
 
