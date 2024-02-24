@@ -2,7 +2,7 @@ import { MyTheme } from "./theme/index";
 import { zhNavbar } from "./navbar/index.js";
 // import { zhSidebar } from "./sidebar/index.js";
 export default MyTheme({
-  hotReload: true,
+  // hotReload: true,
 
   /*
     加上这个，ArticleItem 就会显示作者，所以不要
