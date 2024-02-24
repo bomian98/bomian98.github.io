@@ -97,12 +97,12 @@ export default MyTheme({
       ],
     },
 
-    photoSwipe: {
-      selector: [
-        ".theme-hope-content :not(a) > img:not([no-view])",
-        ".news-content :not(a) > .vp-article-excerpt img",
-      ],
-    },
+    // photoSwipe: {
+    //   selector: [
+    //     ".theme-hope-content :not(a) > img:not([no-view])",
+    //     ".news-content :not(a) > .vp-article-excerpt img",
+    //   ],
+    // },
 
     git: true,
 
