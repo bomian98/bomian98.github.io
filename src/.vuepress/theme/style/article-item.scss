@@ -110,7 +110,7 @@
 
   display: inline-block;
 
-  color: var(--text-color);
+  color: #222;
 
   font-size: 1.25rem;
   font-family: var(--font-family-heading);
@@ -202,7 +202,7 @@
 .vp-article-excerpt {
   overflow: hidden;
   line-height: 1.6;
-  color: var(--light-grey);
+  color: var(--night-grey);
   cursor: default;
 
   @media (max-width: hope-config.$pad) {
