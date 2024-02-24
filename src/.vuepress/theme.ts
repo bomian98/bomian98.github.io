@@ -12,7 +12,7 @@ export default MyTheme({
     },
   */
 
-  hostname: "http://localhost:8080",
+  hostname: "http://bomian.github.io",
 
   // 图标资源 https://theme-hope.vuejs.press/zh/guide/interface/icon.html#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE
   iconAssets: [
