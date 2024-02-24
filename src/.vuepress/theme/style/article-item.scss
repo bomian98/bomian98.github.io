@@ -71,7 +71,7 @@
   .vp-article-item-uncover {
     order: 1;
     display: flex;
-    width: 75%;
+    min-width: 75%;
     flex-direction: column;
 
     > :nth-last-child(2) {
@@ -202,7 +202,7 @@
 .vp-article-excerpt {
   overflow: hidden;
   line-height: 1.6;
-  color: var(--night-grey);
+  color: var(--dark-grey);
   cursor: default;
 
   @media (max-width: hope-config.$pad) {
