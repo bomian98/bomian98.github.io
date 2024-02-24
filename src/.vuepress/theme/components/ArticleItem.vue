@@ -104,8 +104,6 @@ const pageInfo2 = computed(() => {
           <div class="vp-article-excerpt" v-html="excerpt"></div>
         </template>
 
-        <hr class="vp-article-hr" />
-
         <!-- Render info slot or the PageInfo component -->
         <template v-if="slots.info">
           <slot name="info" :info="pageInfo"></slot>
