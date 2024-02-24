@@ -80,7 +80,22 @@ export default MyTheme({
     components: {
       components: ["BiliBili", "Badge"],
     },
-
+    blog: {
+      filter: ({ filePathRelative, frontmatter }) => {
+        // 将标记为非文章，并且是说说的加入文章采集中，以便后续筛选
+        if (!frontmatter.article && frontmatter.news) return true;
+        return true;
+      },
+      type: [
+        {
+          key: "news",
+          filter: (page) => page.frontmatter.news === true,
+          path: "/news/",
+          layout: "News",
+          frontmatter: () => ({ title: "说说" }),
+        },
+      ],
+    },
     // photoSwipe: {
     //   selector: [
     //     ".theme-hope-content :not(a) > img:not([no-view])",
