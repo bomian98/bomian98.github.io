@@ -80,22 +80,6 @@ export default MyTheme({
     components: {
       components: ["BiliBili", "Badge"],
     },
-    blog: {
-      filter: ({ filePathRelative, frontmatter }) => {
-        // 将标记为非文章，并且是说说的加入文章采集中，以便后续筛选
-        if (!frontmatter.article && frontmatter.news) return true;
-        return true;
-      },
-      type: [
-        {
-          key: "news",
-          filter: (page) => page.frontmatter.news === true,
-          path: "/news/",
-          layout: "News",
-          frontmatter: () => ({ title: "说说" }),
-        },
-      ],
-    },
 
     // photoSwipe: {
     //   selector: [
@@ -106,34 +90,34 @@ export default MyTheme({
 
     git: true,
 
-    feed: {
-      rss: true,
-    },
+    // feed: {
+    //   rss: true,
+    // },
 
-    comment: {
-      provider: "Waline",
-      serverURL: "https://talk.oragekk.me/", // your server url
-      reaction: true,
-      requiredMeta: ["nick"],
-      wordLimit: 300,
-      emoji: [
-        "https://unpkg.com/@waline/emojis@1.1.0/tieba",
-        "https://unpkg.com/@waline/emojis@1.1.0/weibo",
-        "https://emoji.shojo.cn/bili/webp/tv_小电视_动图",
-        "https://emoji.shojo.cn/bili/webp/罗小黑战记",
-        "https://emoji.shojo.cn/bili/webp/2233娘",
-        "https://emoji.shojo.cn/bili/webp/装扮小姐姐梦幻冬季",
-        "https://emoji.shojo.cn/bili/webp/装扮小姐姐·秋日午后",
-        "https://emoji.shojo.cn/bili/webp/星尘",
-        "https://emoji.shojo.cn/bili/webp/池年",
-      ],
-      locales: {
-        "/": {
-          placeholder:
-            "欢迎留言~ _(≧∇≦」∠)_ (填写常用邮箱即可快速收到回复通知~)",
-        },
-      },
-    },
+    // comment: {
+    //   provider: "Waline",
+    //   serverURL: "https://talk.oragekk.me/", // your server url
+    //   reaction: true,
+    //   requiredMeta: ["nick"],
+    //   wordLimit: 300,
+    //   emoji: [
+    //     "https://unpkg.com/@waline/emojis@1.1.0/tieba",
+    //     "https://unpkg.com/@waline/emojis@1.1.0/weibo",
+    //     "https://emoji.shojo.cn/bili/webp/tv_小电视_动图",
+    //     "https://emoji.shojo.cn/bili/webp/罗小黑战记",
+    //     "https://emoji.shojo.cn/bili/webp/2233娘",
+    //     "https://emoji.shojo.cn/bili/webp/装扮小姐姐梦幻冬季",
+    //     "https://emoji.shojo.cn/bili/webp/装扮小姐姐·秋日午后",
+    //     "https://emoji.shojo.cn/bili/webp/星尘",
+    //     "https://emoji.shojo.cn/bili/webp/池年",
+    //   ],
+    //   locales: {
+    //     "/": {
+    //       placeholder:
+    //         "欢迎留言~ _(≧∇≦」∠)_ (填写常用邮箱即可快速收到回复通知~)",
+    //     },
+    //   },
+    // },
 
     // @vuepress/plugin-prismjs 代码主题
     // prismjs: false,
@@ -196,60 +180,60 @@ export default MyTheme({
     },
 
     // uncomment these if you want a PWA
-    pwa: {
-      favicon: "/favicon.ico",
-      cacheHTML: true,
-      cachePic: true,
-      appendBase: true,
-      apple: {
-        icon: "/assets/icon/apple-icon-152.png",
-        statusBarColor: "black",
-      },
-      msTile: {
-        image: "/assets/icon/ms-icon-144.png",
-        color: "#ffffff",
-      },
-      manifest: {
-        icons: [
-          {
-            src: "/assets/icon/chrome-mask-512.png",
-            sizes: "512x512",
-            purpose: "maskable",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-mask-192.png",
-            sizes: "192x192",
-            purpose: "maskable",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-        ],
-        shortcuts: [
-          {
-            name: "Demo",
-            short_name: "Demo",
-            url: "/demo/",
-            icons: [
-              {
-                src: "/assets/icon/guide-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-            ],
-          },
-        ],
-      },
-    },
+    // pwa: {
+    //   favicon: "/favicon.ico",
+    //   cacheHTML: true,
+    //   cachePic: true,
+    //   appendBase: true,
+    //   apple: {
+    //     icon: "/assets/icon/apple-icon-152.png",
+    //     statusBarColor: "black",
+    //   },
+    //   msTile: {
+    //     image: "/assets/icon/ms-icon-144.png",
+    //     color: "#ffffff",
+    //   },
+    //   manifest: {
+    //     icons: [
+    //       {
+    //         src: "/assets/icon/chrome-mask-512.png",
+    //         sizes: "512x512",
+    //         purpose: "maskable",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/assets/icon/chrome-mask-192.png",
+    //         sizes: "192x192",
+    //         purpose: "maskable",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/assets/icon/chrome-512.png",
+    //         sizes: "512x512",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/assets/icon/chrome-192.png",
+    //         sizes: "192x192",
+    //         type: "image/png",
+    //       },
+    //     ],
+    //     shortcuts: [
+    //       {
+    //         name: "Demo",
+    //         short_name: "Demo",
+    //         url: "/demo/",
+    //         icons: [
+    //           {
+    //             src: "/assets/icon/guide-maskable.png",
+    //             sizes: "192x192",
+    //             purpose: "maskable",
+    //             type: "image/png",
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    // },
   },
 });
