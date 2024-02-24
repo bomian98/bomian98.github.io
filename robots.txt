@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: http://localhost:8080/sitemap.xml
+Sitemap: http://bomian.github.io/sitemap.xml
