@@ -7,19 +7,20 @@
 @use "info/page-meta";
 @use "info/category-info";
 @use "info/tag-info";
+@use "main-page";
 
 .vp-page {
   background-color: var(--bg-color-float) !important;
 }
 
 html {
-  font-size: 20px;
+  font-size: 17px;
   @media (max-width: hope-config.$pad) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media (max-width: hope-config.$mobile) {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 div {
@@ -41,15 +42,3 @@ div {
     padding-inline: 0;
   }
 }
-
-// .theme-hope-content:not(.custom) > h1,
-// .theme-hope-content:not(.custom) > h2,
-// .theme-hope-content:not(.custom) > h3,
-// .theme-hope-content:not(.custom) > h4,
-// .theme-hope-content:not(.custom) > h5,
-// .theme-hope-content:not(.custom) > h6 {
-//   margin-top: 0.5rem;
-//   margin-bottom: 0.5rem;
-//   padding-top: 1rem;
-//   outline: none;
-// }
