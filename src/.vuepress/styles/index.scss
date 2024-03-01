@@ -1,5 +1,6 @@
 // place your custom styles here
 @use "@sass-palette/hope-config";
+@use "font";
 @use "navbar/navbar";
 @use "blog/blog-info";
 @use "info/toc";
@@ -14,6 +15,8 @@
 }
 
 html {
+  --font-family-heading: "PT Serif", bomian_font !important;
+  --font-family: "PT Serif", bomian_font !important;
   font-size: 17px;
   @media (max-width: hope-config.$pad) {
     font-size: 16px;
