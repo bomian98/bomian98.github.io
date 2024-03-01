@@ -1,17 +1,18 @@
 .vp-navbar {
-    position: static;
-    box-shadow: none;
+  position: static;
+  box-shadow: none;
+  font-family: "PT Serif", var(--font-family-heading);
 
-    .vp-nav-links{
-        font-size: 18px;
-    }
+  .vp-nav-links {
+    font-size: 18px;
+  }
 }
-.vp-navbar .nav-item > .nav-link.active{
-    color: var(--dark-grey);
+.vp-navbar .nav-item > .nav-link.active {
+  color: var(--dark-grey);
 }
-.vp-navbar .nav-item > .nav-link:hover{
-    color: var(--theme-color);
+.vp-navbar .nav-item > .nav-link:hover {
+  color: var(--theme-color);
 }
-.vp-navbar .nav-item > .nav-link::after{
-    display: none;
+.vp-navbar .nav-item > .nav-link::after {
+  display: none;
 }

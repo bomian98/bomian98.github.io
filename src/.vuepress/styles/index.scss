@@ -13,10 +13,21 @@
 .vp-page {
   background-color: var(--bg-color-float) !important;
 }
+:root {
+  --font-family-heading: "JetBrainsMono", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica,
+    "PingFangSC-Regular", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei",
+    "Source Han Sans CN", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  --font-family: "JetBrainsMono", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, "Helvetica Neue", Helvetica, "PingFangSC-Regular",
+    "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "Source Han Sans CN",
+    "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
 
 html {
-  --font-family-heading: "PT Serif", bomian_font !important;
-  --font-family: "PT Serif", bomian_font !important;
+  // --font-family-heading: "PT Serif", bomian_font !important;
+  // --font-family: "PT Serif", bomian_font !important;
+  -webkit-font-smoothing: auto;
   font-size: 17px;
   @media (max-width: hope-config.$pad) {
     font-size: 16px;
@@ -26,6 +37,7 @@ html {
     font-size: 15px;
   }
 }
+
 div {
   display: block;
 }
