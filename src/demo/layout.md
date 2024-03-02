@@ -2,7 +2,7 @@
 title: 布局
 order: 2
 category:
-  - 指南
+  - 使用指南
 tag:
   - 布局
 ---
