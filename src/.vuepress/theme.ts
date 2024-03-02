@@ -7,7 +7,7 @@ export default MyTheme({
   /*
     加上这个，ArticleItem 就会显示作者，所以不要
     author: {
-      name: "不眠",
+      name: "Bomian",
       url: "https://orgaekk.me",
     },
   */
@@ -35,7 +35,7 @@ export default MyTheme({
   contributors: false,
   editLink: false,
 
-  logo: "/logo.svg",
+  logo: "/logo.jpg",
 
   docsDir: "src",
 
@@ -52,7 +52,7 @@ export default MyTheme({
   // navbarAutoHide: "always",
 
   blog: {
-    name: "不眠",
+    name: "Bomian",
     description: "",
     intro: "/info/info.html",
   },
@@ -146,7 +146,7 @@ export default MyTheme({
     },
 
     copyright: {
-      author: "不眠",
+      author: "Bomian",
       license: "CC BY-NC-SA 4.0",
       global: true,
     },

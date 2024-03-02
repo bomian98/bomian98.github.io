@@ -16,3 +16,11 @@
 .vp-navbar .nav-item > .nav-link::after {
   display: none;
 }
+
+.vp-navbar .vp-nav-logo{
+  border-radius: 50%;
+}
+
+.vp-navbar .vp-site-name{
+  font-style: italic;
+}
